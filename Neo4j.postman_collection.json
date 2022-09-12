@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "c0c3ba1f-046d-4dc7-9a25-3979a47891e3",
+		"name": "Neo4j",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13713929"
+	},
+	"item": [
+		{
+			"name": "createStudentNode",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Martin\",\r\n    \"birthYear\" : 1990,\r\n    \"country\" : \"USA\",\r\n    \"subjectList\" : [\r\n        {\r\n            \"subjectName\" : \"Neo4j\",\r\n            \"marks\" : 80\r\n        },\r\n        {\r\n            \"subjectName\" : \"Java\",\r\n            \"marks\" : 70\r\n        }\r\n    ],\r\n    \"department\" : {\r\n        \"depName\" : \"Computer Science\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/getStudentById/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"getStudentById",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/getStudentsByName/Martin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"getStudentsByName",
+						"Martin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllStudents",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "updateStudent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 6,\r\n    \"name\" : \"Raj\",\r\n    \"country\" : \"India\",\r\n    \"birthYear\" : 1993\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteStudent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/delete/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"delete",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentByNameAndBirthYear",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/getStudentByNameAndBirthYear/John/1990",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"getStudentByNameAndBirthYear",
+						"John",
+						"1990"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentByNameOrBirthYear",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/getStudentByNameOrBirthYear/aa/1991",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"getStudentByNameOrBirthYear",
+						"aa",
+						"1991"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentsByBirthYear",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"birthYearList\" : [1990,1991]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/getStudentsByBirthYear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"getStudentsByBirthYear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentsWithPagination",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentsWithSorting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/getStudentsWithSorting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"getStudentsWithSorting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentsByNameLike",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentsByNameStartWith",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/neo4jDemo/api/student/getStudentsByNameStartWith/Jo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"neo4jDemo",
+						"api",
+						"student",
+						"getStudentsByNameStartWith",
+						"Jo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
